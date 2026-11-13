@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Standard Roofing Orlando | Concept homepage (Premium)</title>
+<meta name="description" content="Roofing in Winter Springs, FL. Repairs, replacements and inspections. Book an inspection online and get a clear written estimate.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#071017">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --acc:#ff8a5c; --bg:color-mix(in srgb, var(--acc) 5%, #060b10); --bg-2:color-mix(in srgb, var(--acc) 9%, #0b131a);
+          --ink:#eef6f8; --muted:#9db0b9; --glass:rgba(255,255,255,.06); --line:rgba(255,255,255,.13); --focus:var(--acc);
+          --bar-bg:color-mix(in srgb, var(--bg-2) 92%, transparent); --bar-ink:var(--ink); --bar-acc:var(--acc); --bar-acc-ink:#061015; --faq-line:var(--line); }
+  
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  a, button, input, select, textarea, label { touch-action:manipulation; }
+  :focus-visible { outline:2px solid var(--focus); outline-offset:3px; }
+  h1, h2, h3, blockquote { text-wrap:balance; }
+  p { text-wrap:pretty; }
+  .skip { position:absolute; left:12px; top:-60px; z-index:99; padding:10px 16px; background:var(--focus); color:#000; font-weight:700; border-radius:8px; }
+  .skip:focus { top:36px; }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .num { font-variant-numeric:tabular-nums; }
+  [hidden] { display:none !important; }
+  /* Phone-only bar that keeps "call" and "quote" one tap away (set --bar-bg/--bar-ink/--bar-acc per style). */
+  .mbar { display:none; }
+  @media (max-width:700px) {
+    .mbar { position:fixed; z-index:50; left:10px; right:10px; bottom:calc(10px + env(safe-area-inset-bottom)); display:flex; gap:8px; padding:8px;
+            background:var(--bar-bg); border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.35); transform:translateY(140%); transition:transform .35s cubic-bezier(.2,.8,.2,1); }
+    .mbar.on { transform:none; }
+    .mbar a { flex:1; display:flex; align-items:center; justify-content:center; min-height:48px; border-radius:12px; font-weight:700; font-size:16px; color:var(--bar-ink); }
+    .mbar a.go { background:var(--bar-acc); color:var(--bar-acc-ink, #000); }
+    body { padding-bottom:84px; }
+  }
+  /* FAQ: native details/summary, styled per style through --faq-line. */
+  .faq { border-top:1px solid var(--faq-line); max-width:900px; }
+  .faq details { border-bottom:1px solid var(--faq-line); }
+  .faq summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:20px; align-items:center; padding:22px 4px; font-weight:700; font-size:20px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:"+"; font-size:26px; line-height:1; transition:transform .25s; flex:none; }
+  .faq details[open] summary::after { transform:rotate(45deg); }
+  .faq details p { margin:0 4px 24px; max-width:42em; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } .mbar, .faq summary::after { transition:none; } }
+
+  * { box-sizing:border-box; }
+  html,body { margin:0; overflow-x:hidden; background:var(--bg); color:var(--ink); font:17px/1.6 Manrope, system-ui, sans-serif; }
+  a { color:inherit; text-decoration:none; }
+  .concept { position:fixed; z-index:20; top:0; left:0; right:0; text-align:center; font-size:12px; padding:6px; background:rgba(0,0,0,.6); color:#a9bcc4; backdrop-filter:blur(6px); }
+  #scene { position:fixed; inset:0; width:100vw; height:100vh; display:block; z-index:0; opacity:0; transition:opacity 1.4s ease; }
+  #scene.on { opacity:1; }
+  .glow { position:fixed; inset:0; z-index:0; pointer-events:none;
+    background: radial-gradient(60vw 50vh at 72% 45%, color-mix(in srgb, var(--acc) 16%, transparent), transparent 60%),
+                radial-gradient(40vw 40vh at 10% 90%, color-mix(in srgb, var(--acc) 9%, transparent), transparent 60%); }
+  header, main, footer { position:relative; z-index:2; }
+  header { display:flex; align-items:center; gap:28px; max-width:1240px; margin:0 auto; padding:44px 32px 0; }
+  .logo { font:800 21px/1.15 Syne, sans-serif; letter-spacing:.01em; max-width:18em; }
+  nav { margin-left:auto; display:flex; gap:28px; color:var(--muted); font-size:15px; }
+  nav a:hover { color:var(--ink); }
+  .btn { display:inline-flex; align-items:center; gap:10px; padding:14px 24px; border-radius:999px; font:600 16px Manrope, sans-serif; color:#061015; background:var(--acc); white-space:nowrap; border:0; cursor:pointer;
+         transition:transform .2s, box-shadow .2s; }
+  .btn:hover { transform:translateY(-2px); box-shadow:0 10px 40px color-mix(in srgb, var(--acc) 40%, transparent); }
+  .btn.ghost { background:var(--glass); color:var(--ink); border:1px solid var(--line); backdrop-filter:blur(10px); }
+  header .btn { margin-left:auto; } nav + .btn { margin-left:0; }
+
+  .hero { max-width:1240px; margin:0 auto; min-height:calc(100vh - 90px); padding:0 32px; display:flex; flex-direction:column; justify-content:center; }
+  .where { color:var(--muted); font-size:16px; }
+  h1 { font:800 clamp(48px, 6.4vw, 100px)/.94 Syne, sans-serif; letter-spacing:-.03em; margin:16px 0 24px; max-width:8.4em; }
+  .lede { max-width:30em; color:#c3d1d7; font-size:19px; margin:0 0 34px; }
+  .row { display:flex; gap:12px; flex-wrap:wrap; }
+
+  section { max-width:1240px; margin:0 auto; padding:120px 32px; scroll-margin-top:30px; }
+  h2 { font:700 clamp(34px, 4.6vw, 60px)/1.04 Syne, sans-serif; letter-spacing:-.02em; margin:0 0 48px; max-width:13em; }
+
+  /* Services as an editorial list: one row per service, the line lights up on hover. */
+  .svc { list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+  .svc li { position:relative; display:grid; grid-template-columns:72px minmax(0, 1fr) minmax(0, 1fr); gap:28px; align-items:center; padding:34px 8px; border-bottom:1px solid var(--line); }
+  .svc li::after { content:""; position:absolute; left:0; bottom:-1px; height:1px; width:100%; background:var(--acc); transform:scaleX(0); transform-origin:left; transition:transform .5s cubic-bezier(.2,.8,.2,1); }
+  .svc li:hover::after { transform:scaleX(1); }
+  .svc .ico { width:56px; height:56px; border-radius:50%; display:grid; place-items:center; border:1px solid var(--line); color:var(--acc); background:var(--glass); }
+  .svc .ico svg { width:26px; height:26px; }
+  .svc h3 { font:700 clamp(26px, 3vw, 40px)/1.05 Syne; margin:0; letter-spacing:-.01em; }
+  .svc p { margin:0; color:var(--muted); max-width:30em; }
+
+  .steps { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; counter-reset:s; }
+  .steps li { counter-increment:s; padding:30px; border-radius:22px; border:1px solid var(--line); background:var(--glass); backdrop-filter:blur(14px); }
+  .steps li::before { content:counter(s); display:grid; place-items:center; width:38px; height:38px; border-radius:50%; border:1px solid var(--acc); color:var(--acc); font:700 16px Syne; }
+  .steps h3 { font:700 24px/1.15 Syne; margin:34px 0 8px; }
+  .steps p { margin:0; color:var(--muted); }
+
+  .proof { display:grid; grid-template-columns:minmax(0, 1.5fr) minmax(0, 1fr); gap:56px; align-items:end; }
+  .proof blockquote { font:600 clamp(24px,3vw,38px)/1.3 Syne; margin:0; }
+  .proof figcaption { margin-top:20px; color:var(--muted); font-size:15px; }
+  .score { border-left:1px solid var(--line); padding-left:32px; }
+  .score b { display:block; font:800 clamp(56px, 7vw, 96px)/1 Syne; letter-spacing:-.03em; color:var(--acc); }
+  .score span { color:var(--muted); }
+
+  .book { display:grid; grid-template-columns:1fr 1.1fr; gap:56px; align-items:start; }
+  .book p.sub { color:#c3d1d7; font-size:19px; margin:0 0 28px; max-width:24em; }
+  .qf { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:30px; border-radius:24px; background:color-mix(in srgb, var(--bg-2) 80%, transparent); border:1px solid var(--line); backdrop-filter:blur(16px); }
+  .qf-f { display:flex; flex-direction:column; gap:6px; min-width:0; }
+  .qf-wide, .qf-go, .qf-ok { grid-column:1 / -1; }
+  .qf label { font-weight:600; font-size:15px; }
+  .qf-opt { font-weight:400; color:var(--muted); }
+  .qf input, .qf select, .qf textarea { font:inherit; font-size:16px; padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:rgba(0,0,0,.25); color:var(--ink); width:100%; }
+  .qf select option { background:#0b131a; }
+  .qf textarea { resize:vertical; }
+  .qf :is(input, select, textarea):focus-visible { outline:2px solid var(--acc); outline-offset:1px; border-color:transparent; }
+  .qf [aria-invalid="true"] { border-color:#ff7a8a; }
+  .qf-e { margin:0; color:#ff9aa6; font-size:14px; }
+  .qf-go { justify-self:start; }
+  .qf-ok { margin:0; font-size:18px; }
+  .qf-ok:empty { display:none; }
+
+  .faq summary { font-family:Syne, sans-serif; font-size:22px; }
+  .faq details p { color:var(--muted); }
+  .js h1 { visibility:hidden; } .js h1.ready { visibility:visible; }
+  footer { max-width:1240px; margin:0 auto; padding:40px 32px 60px; color:var(--muted); font-size:14px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:20px; }
+  @media (max-width:900px) {
+    nav { display:none; } .steps, .proof, .book { grid-template-columns:1fr; }
+    .svc li { grid-template-columns:56px minmax(0, 1fr); } .svc p { grid-column:2; }
+    .score { border-left:0; padding-left:0; border-top:1px solid var(--line); padding-top:28px; }
+  }
+  @media (max-width:560px) {
+    header { padding:40px 16px 0; } .hero, section { padding-left:16px; padding-right:16px; } section { padding-top:90px; padding-bottom:90px; }
+    .logo { font-size:17px; } header .btn { padding:10px 14px; font-size:14px; }
+    .svc li { grid-template-columns:1fr; gap:14px; padding:28px 0; } .svc p { grid-column:auto; }
+    .hero { justify-content:flex-start; padding-top:46vh; } footer { flex-direction:column; }
+    .qf { grid-template-columns:1fr; padding:22px; }
+    .concept { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  }
+  @media (prefers-reduced-motion: reduce) { #scene { transition:none; } .svc li::after { transition:none; } }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js'); setTimeout(() => document.querySelector('h1')?.classList.add('ready'), 1500);</script>
+<a class="skip" href="#main">Skip to content</a>
+<div class="concept">Concept homepage (Premium) for New Standard Roofing Orlando by Mana Core Labs. Not a live website.</div>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="glow"></div>
+
+<header>
+  <a class="logo" href="#main">New Standard Roofing Orlando</a>
+  <nav aria-label="Main"><a href="#services">Services</a><a href="#how">How it works</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#book">Get a quote</a></nav>
+  <a class="btn ghost" href="tel:4075120144">(407) 512-0144</a>
+</header>
+
+<main id="main">
+  <div class="hero">
+    <p class="where">Roofing in Winter Springs, FL</p>
+    <h1>A roof you can forget about.</h1>
+    <p class="lede">Repairs, replacements and inspections. Book an inspection online and get a clear written estimate.</p>
+    <div class="row"><a class="btn" href="#book">Book an inspection</a><a class="btn ghost" href="#services">See services</a></div>
+  </div>
+
+  <section id="services">
+    <h2>Roofing from first leak to full replacement</h2>
+    <ul class="svc">
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><h3>Roof repair</h3><p>Leaks, missing shingles and flashing, fixed properly.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><h3>Replacement</h3><p>Shingle, metal and tile roofs installed to code.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><h3>Inspections</h3><p>A clear report with photos of what we found.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><h3>Storm damage</h3><p>Documentation to help with your insurance claim.</p></li>
+    </ul>
+  </section>
+
+  <section id="how">
+    <h2>Simple from the first call.</h2>
+    <ol class="steps">
+      <li><h3>Tell us what you need</h3><p>Call, or send a quick request. Photos help us quote faster.</p></li>
+      <li><h3>Pick a time</h3><p>Choose a slot that works for you and get a text confirmation.</p></li>
+      <li><h3>Get a clear estimate</h3><p>Photos of what we found and a written price before any work starts.</p></li>
+    </ol>
+  </section>
+
+  
+  <section id="reviews">
+    <div class="proof">
+      <figure style="margin:0"><blockquote>“Absolutely amazing service! ⭐⭐⭐⭐⭐ I had a wonderful experience with New Standard Roofing Orlando. The team was extremely professional, friendly, and knowledgeable. They did an outstanding job and exceeded my expectations.”</blockquote><figcaption>Google review</figcaption></figure>
+      <div class="score"><b class="num">5.0</b><span>average from 119 Google reviews, serving Winter Springs and nearby</span></div>
+    </div>
+  </section>
+  
+
+  <section id="faq">
+    <h2>Questions people ask first.</h2>
+    
+<div class="faq">
+  <details><summary>Do you work in my area?</summary><p>New Standard Roofing Orlando works in Winter Springs, FL and nearby towns. Not sure about your street? Call (407) 512-0144 or send a request and we’ll tell you right away.</p></details>
+  <details><summary>How soon can someone come out?</summary><p>It depends on the day’s schedule. Call (407) 512-0144 for the next open time, or send a request and we’ll call you back.</p></details>
+  <details><summary>Can I get an idea of the price first?</summary><p>Ask when you call or in your request. Photos of the problem help us give you a better estimate.</p></details>
+  <details><summary>What should I have ready?</summary><p>Your address, a short description of what’s going on and, if you can, a photo or two.</p></details>
+</div>
+
+  </section>
+
+  <section id="book">
+    <div class="book">
+      <div>
+        <h2>Worried about your roof?</h2>
+        <p class="sub">Send a quick request and we’ll call you back, or call us now at (407) 512-0144.</p>
+        <a class="btn ghost" href="tel:4075120144">Call (407) 512-0144</a>
+      </div>
+      
+<form class="qf" novalidate aria-label="Request a quote">
+  <div class="qf-f">
+    <label for="qf-name">Your name</label>
+    <input id="qf-name" name="name" autocomplete="name" required aria-describedby="qf-name-e">
+    <p class="qf-e" id="qf-name-e" hidden>Add your name so we know who to ask for.</p>
+  </div>
+  <div class="qf-f">
+    <label for="qf-phone">Phone</label>
+    <input id="qf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="qf-phone-e">
+    <p class="qf-e" id="qf-phone-e" hidden>Enter a 10-digit phone number.</p>
+  </div>
+  <div class="qf-f qf-wide">
+    <label for="qf-need">What do you need?</label>
+    <select id="qf-need" name="need">
+      <option>Roof repair</option><option>Replacement</option><option>Inspections</option><option>Storm damage</option>
+      <option>Something else</option>
+    </select>
+  </div>
+  <div class="qf-f qf-wide">
+    <label for="qf-details">Anything we should know? <span class="qf-opt">(optional)</span></label>
+    <textarea id="qf-details" name="details" rows="3"></textarea>
+  </div>
+  <button class="btn qf-go" type="submit">Book an inspection</button>
+  <p class="qf-ok" role="status" aria-live="polite" data-biz="New Standard Roofing Orlando"></p>
+</form>
+
+    </div>
+  </section>
+</main>
+<footer><span>© 2026 New Standard Roofing Orlando</span><span>Concept design by Mana Core Labs</span></footer>
+
+
+<div class="mbar" aria-label="Quick contact"><a href="tel:4075120144">Call</a><a class="go" href="#book">Book an inspection</a></div>
+<script>
+// Show the phone bar once the hero's buttons have scrolled away.
+(() => { const bar = document.querySelector('.mbar'); if (!bar) return;
+  const on = () => bar.classList.toggle('on', scrollY > innerHeight * .7 && !document.querySelector('#book')?.matches(':focus-within'));
+  addEventListener('scroll', on, { passive:true }); on(); })();
+</script>
+
+
+<script>
+document.querySelectorAll('.qf').forEach(f => f.addEventListener('submit', e => {
+  e.preventDefault();
+  const name = f.elements.name, phone = f.elements.phone, bad = [];
+  const check = (el, ok) => { el.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    document.getElementById(el.getAttribute('aria-describedby')).hidden = ok; if (!ok) bad.push(el); };
+  check(name, name.value.trim().length > 0);
+  check(phone, phone.value.replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '').length === 10);
+  if (bad.length) { bad[0].focus(); return; }
+  const ok = f.querySelector('.qf-ok');
+  f.querySelectorAll('.qf-f, .qf-go').forEach(el => el.hidden = true);
+  ok.textContent = `Thanks, ${name.value.trim().split(' ')[0]}. This is a concept page, so nothing was sent. On the live site, this request goes straight to ${ok.dataset.biz}.`;
+  ok.tabIndex = -1; ok.focus();
+}));
+</script>
+
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+               "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const SHAPE = "house", ACC = new THREE.Color("#ff8a5c");
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const small = innerWidth < 700;
+
+// Start the 3D after the text has painted, so the page is readable first.
+function start() {
+  const canvas = document.getElementById('scene');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: !small, alpha: true, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, small ? 1.5 : 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  const scene = new THREE.Scene();
+  scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+  const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
+  camera.position.set(0, 0, 9);
+
+  const glass = () => new THREE.MeshPhysicalMaterial({
+    color: ACC.clone().lerp(new THREE.Color(0xffffff), 0.55), metalness: 0, roughness: 0.05, transmission: 1, thickness: 1.2, ior: 1.4,
+    clearcoat: 1, clearcoatRoughness: 0.05, attenuationColor: ACC, attenuationDistance: 2 });
+  const extrude = (shape, depth = 0.5) => new THREE.ExtrudeGeometry(shape, { depth, bevelEnabled: true, bevelThickness: 0.14, bevelSize: 0.1, bevelSegments: 6, curveSegments: 32 }).center();
+
+  // One glass object per trade.
+  const obj = new THREE.Group(); let wobble = null; const sway = [];
+  if (SHAPE === 'drop') {
+    const pts = []; for (let i = 0; i <= 48; i++) { const t = i / 48 * Math.PI; pts.push(new THREE.Vector2(Math.sin(t) * Math.pow(Math.sin(t / 2), 1.3), Math.cos(t) * 1.25)); }
+    const g = new THREE.LatheGeometry(pts, small ? 64 : 96); wobble = { geo: g, base: g.attributes.position.array.slice() }; obj.add(new THREE.Mesh(g, glass()));
+  } else if (SHAPE === 'fan') {
+    const blade = new THREE.Shape(); blade.moveTo(0, 0.15); blade.bezierCurveTo(0.5, 0.9, 1.4, 1.1, 1.55, 0.55); blade.bezierCurveTo(1.6, 0.1, 0.6, -0.1, 0, -0.15); blade.lineTo(0, 0.15);
+    for (let i = 0; i < 5; i++) { const m = new THREE.Mesh(new THREE.ExtrudeGeometry(blade, { depth: 0.12, bevelEnabled: true, bevelThickness: 0.05, bevelSize: 0.05, bevelSegments: 4 }), glass()); m.rotation.z = i * Math.PI * 2 / 5; m.rotation.y = 0.25; obj.add(m); }
+    obj.add(new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.32, 0.5, 48).rotateX(Math.PI / 2), glass()));
+    obj.add(new THREE.Mesh(new THREE.TorusGeometry(1.8, 0.07, 24, 160), glass()));
+  } else if (SHAPE === 'bolt') {
+    const s = new THREE.Shape(); [[0.35, 1.6], [-0.75, -0.1], [-0.05, -0.1], [-0.35, -1.6], [0.8, 0.25], [0.08, 0.25], [0.35, 1.6]].forEach(([x, y], i) => i ? s.lineTo(x, y) : s.moveTo(x, y));
+    obj.add(new THREE.Mesh(extrude(s, 0.45), glass()));
+  } else if (SHAPE === 'house') {
+    const s = new THREE.Shape(); [[-1.1, -1], [1.1, -1], [1.1, 0.25], [0, 1.25], [-1.1, 0.25], [-1.1, -1]].forEach(([x, y], i) => i ? s.lineTo(x, y) : s.moveTo(x, y));
+    const door = new THREE.Path(); [[-0.25, -1], [0.25, -1], [0.25, -0.3], [-0.25, -0.3]].forEach(([x, y], i) => i ? door.lineTo(x, y) : door.moveTo(x, y));
+    s.holes.push(door); obj.add(new THREE.Mesh(extrude(s, 0.9), glass()));
+  } else if (SHAPE === 'bubbles') {
+    [[0, 0, 0, 1], [1.2, 0.8, -0.3, 0.45], [-1.1, 0.9, 0.2, 0.38], [0.9, -0.95, 0.4, 0.32], [-0.8, -1, -0.4, 0.5], [1.6, -0.1, 0.2, 0.22], [-1.6, 0, -0.2, 0.26]]
+      .forEach(([x, y, z, r]) => { const m = new THREE.Mesh(new THREE.SphereGeometry(r, 48, 32), glass()); m.position.set(x, y, z); m.userData.home = m.position.clone(); obj.add(m); });
+  } else { // grass: a clump of glass blades on a turf disc, swaying in the breeze
+    const turf = new THREE.Mesh(new THREE.CylinderGeometry(1.35, 1.5, 0.22, 64), glass()); turf.position.y = -1.55; obj.add(turf);
+    const blade = (h, bend) => { const w = 0.15, b = new THREE.Shape(); b.moveTo(-w, 0);
+      b.quadraticCurveTo(-w * 0.4, h * 0.55, bend, h); b.quadraticCurveTo(w * 0.6, h * 0.5, w, 0); b.lineTo(-w, 0);
+      return new THREE.ExtrudeGeometry(b, { depth: 0.05, bevelEnabled: true, bevelThickness: 0.025, bevelSize: 0.025, bevelSegments: 3, curveSegments: 24 }); };
+    const rnd = (i, k) => (Math.sin(i * 12.9898 + k * 78.233) * 43758.5453) % 1;
+    for (let i = 0; i < 15; i++) {
+      const a = i * 2.39996, r = 0.15 + 0.85 * Math.sqrt((i + 0.5) / 15), h = 3.1 - r * 1.3 + Math.abs(rnd(i, 1)) * 0.5;
+      const pivot = new THREE.Group(); pivot.position.set(Math.cos(a) * r, -1.45, Math.sin(a) * r * 0.7);
+      pivot.rotation.y = a + Math.PI / 2; pivot.userData.lean = (Math.cos(a) * r) * -0.25;
+      pivot.add(new THREE.Mesh(blade(h, (rnd(i, 2) - 0.5) * 0.9), glass())); obj.add(pivot); sway.push(pivot);
+    }
+  }
+  const group = new THREE.Group(); group.add(obj); scene.add(group);
+
+  const rings = [];
+  // Ripples say water: keep them for the trades where that fits.
+  for (let i = 0; i < (SHAPE === 'grass' ? 0 : 4); i++) {
+    const r = new THREE.Mesh(new THREE.TorusGeometry(1, 0.012, 8, 160), new THREE.MeshBasicMaterial({ color: ACC, transparent: true }));
+    r.rotation.x = Math.PI / 2.15; r.position.y = -1.8; r.userData.phase = i / 4; group.add(r); rings.push(r);
+  }
+  const N = small ? 180 : 420, P = new Float32Array(N * 3), pGeo = new THREE.BufferGeometry();
+  for (let i = 0; i < N; i++) { P[i*3] = (Math.random() - 0.5) * 16; P[i*3+1] = (Math.random() - 0.5) * 10; P[i*3+2] = (Math.random() - 0.5) * 8 - 2; }
+  pGeo.setAttribute('position', new THREE.BufferAttribute(P, 3));
+  const particles = new THREE.Points(pGeo, new THREE.PointsMaterial({ color: ACC, size: 0.025, transparent: true, opacity: 0.55 }));
+  scene.add(particles);
+  scene.add(new THREE.DirectionalLight(0xffffff, 2).translateX(3).translateY(4));
+
+  const mouse = { x: 0, y: 0 }; let sy = scrollY;
+  addEventListener('pointermove', e => { mouse.x = e.clientX / innerWidth - 0.5; mouse.y = e.clientY / innerHeight - 0.5; });
+  addEventListener('scroll', () => { sy = scrollY; }, { passive: true });
+  function resize() {
+    const w = innerWidth, h = innerHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+    const wide = w > 900;
+    group.position.x = wide ? Math.min(3.4, 1.6 * camera.aspect) : 0; group.scale.setScalar(wide ? 0.9 : 0.46);
+    group.userData.y0 = wide ? 0 : 1.25;
+  }
+  addEventListener('resize', resize); resize();
+
+  function frame(ms) {
+    const t = ms * 0.001;
+    // Past the hero the object has drifted off screen: skip the expensive work.
+    const visible = sy < innerHeight * 1.6;
+    if (wobble && visible) {
+      const pos = wobble.geo.attributes.position, b = wobble.base;
+      for (let i = 0; i < pos.count; i++) { const x = b[i*3], y = b[i*3+1], z = b[i*3+2];
+        const k = 1 + 0.035 * Math.sin(y * 4 + t * 2.2) * Math.cos(Math.atan2(z, x) * 3 + t * 1.3); pos.setXYZ(i, x * k, y, z * k); }
+      pos.needsUpdate = true; wobble.geo.computeVertexNormals();
+    }
+    if (SHAPE === 'fan') obj.rotation.z = -t * 0.9;
+    else if (SHAPE === 'bubbles') obj.children.forEach((m, i) => { m.position.y = m.userData.home.y + Math.sin(t * 1.2 + i) * 0.12; });
+    else if (SHAPE === 'grass') { obj.rotation.y = Math.sin(t * 0.3) * 0.35; sway.forEach((g, i) => { g.rotation.z = g.userData.lean + Math.sin(t * 1.5 + i * 0.6) * 0.07; }); }
+    else obj.rotation.y = Math.sin(t * 0.5) * 0.5;
+    group.rotation.y += ((mouse.x * 0.9) - group.rotation.y) * 0.05 + 0.002;
+    group.rotation.x += ((mouse.y * 0.5) - group.rotation.x) * 0.05;
+    group.position.y = (group.userData.y0 || 0) + Math.sin(t * 1.1) * 0.12 + sy * 0.0025;
+    group.visible = visible;
+    rings.forEach(r => { const p = (t * 0.25 + r.userData.phase) % 1; r.scale.setScalar(0.4 + p * 2.4); r.material.opacity = (1 - p) * 0.7; });
+    particles.rotation.y = t * 0.02 + mouse.x * 0.1; particles.position.y = sy * 0.001;
+    renderer.render(scene, camera);
+    if (!reduce) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(t => { frame(t); canvas.classList.add('on'); });
+}
+if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1200 }); else setTimeout(start, 300);
+</script>
+<script type="module">
+import { animate, splitText, stagger } from 'https://cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.esm.min.js';
+const h1 = document.querySelector('h1');
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  // Words surface out of a blur, like they're coming up through glass.
+  const { words } = splitText(h1, { words: true });
+  h1.classList.add('ready');
+  animate(words, { opacity: [0, 1], filter: ['blur(14px)', 'blur(0px)'], y: [24, 0], duration: 1100, delay: stagger(90), ease: 'out(3)' });
+} else h1.classList.add('ready');
+</script>
+</body>
+</html>
