@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pebble Junction | Concept homepage (Made for you)</title>
+<meta name="description" content="Lawn &amp; Landscaping in Sanford, FL. Lawn care, landscaping and cleanups. Request a quote online and we&#39;ll set up a schedule.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#10261a">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#10261a; --line:#bfe3c4; --a:#8be36b; --b:#f6d36b;
+          --bg-2:color-mix(in srgb, var(--bg) 88%, var(--line)); --bg-3:color-mix(in srgb, var(--bg) 78%, var(--line));
+          --deep:color-mix(in srgb, var(--bg) 70%, #000); --dim:color-mix(in srgb, var(--line) 28%, transparent);
+          --grid:color-mix(in srgb, var(--line) 7%, transparent); --ink:color-mix(in srgb, var(--line) 30%, #fff); --muted:color-mix(in srgb, var(--line) 75%, var(--bg)); --focus:var(--a);
+          --bar-bg:var(--deep); --bar-ink:var(--ink); --bar-acc:var(--a); --bar-acc-ink:var(--bg); --faq-line:var(--dim); }
+  
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  a, button, input, select, textarea, label { touch-action:manipulation; }
+  :focus-visible { outline:2px solid var(--focus); outline-offset:3px; }
+  h1, h2, h3, blockquote { text-wrap:balance; }
+  p { text-wrap:pretty; }
+  .skip { position:absolute; left:12px; top:-60px; z-index:99; padding:10px 16px; background:var(--focus); color:#000; font-weight:700; border-radius:8px; }
+  .skip:focus { top:36px; }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .num { font-variant-numeric:tabular-nums; }
+  [hidden] { display:none !important; }
+  /* Phone-only bar that keeps "call" and "quote" one tap away (set --bar-bg/--bar-ink/--bar-acc per style). */
+  .mbar { display:none; }
+  @media (max-width:700px) {
+    .mbar { position:fixed; z-index:50; left:10px; right:10px; bottom:calc(10px + env(safe-area-inset-bottom)); display:flex; gap:8px; padding:8px;
+            background:var(--bar-bg); border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.35); transform:translateY(140%); transition:transform .35s cubic-bezier(.2,.8,.2,1); }
+    .mbar.on { transform:none; }
+    .mbar a { flex:1; display:flex; align-items:center; justify-content:center; min-height:48px; border-radius:12px; font-weight:700; font-size:16px; color:var(--bar-ink); }
+    .mbar a.go { background:var(--bar-acc); color:var(--bar-acc-ink, #000); }
+    body { padding-bottom:84px; }
+  }
+  /* FAQ: native details/summary, styled per style through --faq-line. */
+  .faq { border-top:1px solid var(--faq-line); max-width:900px; }
+  .faq details { border-bottom:1px solid var(--faq-line); }
+  .faq summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:20px; align-items:center; padding:22px 4px; font-weight:700; font-size:20px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:"+"; font-size:26px; line-height:1; transition:transform .25s; flex:none; }
+  .faq details[open] summary::after { transform:rotate(45deg); }
+  .faq details p { margin:0 4px 24px; max-width:42em; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } .mbar, .faq summary::after { transition:none; } }
+
+  .code, .sheet, .tagno, .cell small, .xray figcaption, .lens i, .dim::after, cite, .concept { font-family:"IBM Plex Mono", ui-monospace, monospace; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; overflow-x:hidden; background:var(--bg); color:var(--ink); font:17px/1.6 "IBM Plex Sans", system-ui, sans-serif; }
+  body { background-image:linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+          linear-gradient(color-mix(in srgb, var(--line) 3.5%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--line) 3.5%, transparent) 1px, transparent 1px);
+         background-size:120px 120px, 120px 120px, 24px 24px, 24px 24px; }
+  a { color:inherit; text-decoration:none; }
+  .concept { position:fixed; z-index:40; top:0; left:0; right:0; text-align:center; font-size:11px; padding:6px; background:var(--deep); color:var(--muted); letter-spacing:.04em; }
+  h1, h2, h3 { font-family:"Barlow Condensed", sans-serif; text-transform:uppercase; letter-spacing:.01em; margin:0; }
+
+  header { position:relative; z-index:5; max-width:1280px; margin:0 auto; padding:52px 32px 0 96px; display:flex; align-items:center; gap:24px; }
+  .logo { font:800 24px/1.05 "Barlow Condensed"; letter-spacing:.05em; text-transform:uppercase; max-width:18em; }
+  .sheet { font-size:11px; color:var(--muted); border:1px solid var(--dim); padding:4px 8px; white-space:nowrap; }
+  .call { margin-left:auto; display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border:1.5px solid var(--a); color:var(--a); font-weight:600; white-space:nowrap; transition:background .2s, color .2s; }
+  .call:hover { background:var(--a); color:var(--bg); }
+
+  .rail { position:fixed; z-index:10; left:36px; top:60px; bottom:28px; width:22px; }
+  .rail .pipe { position:absolute; left:6px; top:0; bottom:0; width:10px; border:1.5px solid var(--line); border-radius:6px; overflow:hidden; background:var(--bg); }
+  .rail .water { position:absolute; left:0; right:0; top:0; height:calc(var(--p,0) * 100%); background:linear-gradient(var(--a), color-mix(in srgb, var(--a) 70%, #000)); box-shadow:0 0 14px var(--a); }
+  .valve { position:absolute; left:-3px; top:var(--pos); width:28px; height:28px; transform:translateY(-50%); border:1.5px solid var(--line); background:var(--bg); border-radius:50%;
+           cursor:pointer; display:grid; place-items:center; transition:border-color .3s, box-shadow .3s; padding:0; }
+  .valve::before { content:""; width:14px; height:2px; background:var(--line); transition:transform .4s cubic-bezier(.2,.8,.2,1), background .3s; }
+  .valve::after { content:""; position:absolute; inset:-9px; }
+  .valve.open { border-color:var(--a); box-shadow:0 0 12px color-mix(in srgb, var(--a) 60%, transparent); }
+  .valve.open::before { transform:rotate(90deg); background:var(--a); }
+  .valve span { position:absolute; left:38px; white-space:nowrap; font-size:11px; letter-spacing:.12em; color:var(--muted); opacity:0; transform:translateX(-6px);
+                transition:opacity .2s, transform .2s; pointer-events:none; background:var(--bg); padding:2px 6px; border:1px solid var(--dim); }
+  .valve:hover span, .valve.cur span { opacity:1; transform:none; }
+  .valve.cur span { color:var(--a); }
+
+  .hero { position:relative; max-width:1280px; margin:0 auto; padding:40px 32px 80px 96px; display:grid; grid-template-columns:.9fr 1.1fr; gap:40px; align-items:center; min-height:calc(100vh - 100px); }
+  .code { font-size:12px; letter-spacing:.16em; color:var(--a); }
+  h1 { font-weight:800; font-size:clamp(52px, 6vw, 94px); line-height:.9; margin:16px 0 22px; }
+  .lede { color:color-mix(in srgb, var(--ink) 82%, var(--bg)); max-width:30em; margin:0 0 30px; font-size:18px; }
+  .row { display:flex; gap:12px; flex-wrap:wrap; }
+  .btn { display:inline-flex; align-items:center; gap:10px; padding:14px 22px; font:600 17px "IBM Plex Sans", sans-serif; cursor:pointer; background:var(--a); color:var(--bg); border:1.5px solid var(--a); transition:transform .2s, box-shadow .2s; }
+  .btn:hover { transform:translate(-3px,-3px); box-shadow:3px 3px 0 var(--ink); }
+  .btn.line { background:transparent; color:var(--ink); border-color:var(--line); }
+  .meta { margin-top:34px; display:flex; gap:28px; font-size:14px; color:var(--muted); }
+  .meta b { display:block; color:var(--ink); font:600 34px "Barlow Condensed"; }
+
+  .xray { position:relative; aspect-ratio:600/480; width:100%; border:1.5px solid var(--dim); background:color-mix(in srgb, var(--deep) 35%, transparent); touch-action:pan-y; cursor:none; margin:0; }
+  .xray:focus-visible { outline:2px solid var(--a); outline-offset:6px; }
+  .xray svg { position:absolute; inset:0; width:100%; height:100%; overflow:hidden; }
+  .xray .inside { -webkit-mask-image:radial-gradient(circle var(--r,110px) at var(--x,62%) var(--y,58%), #000 97%, transparent 100%);
+                  mask-image:radial-gradient(circle var(--r,110px) at var(--x,62%) var(--y,58%), #000 97%, transparent 100%); }
+  .lens { position:absolute; left:var(--x,62%); top:var(--y,58%); width:calc(var(--r,110px) * 2); height:calc(var(--r,110px) * 2); transform:translate(-50%,-50%);
+          border:1.5px solid var(--a); border-radius:50%; pointer-events:none; box-shadow:0 0 40px color-mix(in srgb, var(--a) 25%, transparent); }
+  .lens::before, .lens::after { content:""; position:absolute; background:color-mix(in srgb, var(--a) 50%, transparent); }
+  .lens::before { left:50%; top:-12px; bottom:-12px; width:1px; }
+  .lens::after { top:50%; left:-12px; right:-12px; height:1px; }
+  .lens i { position:absolute; top:-26px; left:50%; transform:translateX(-50%); font:600 10px "IBM Plex Mono"; letter-spacing:.2em; color:var(--a); font-style:normal; white-space:nowrap; }
+  .xray figcaption { position:absolute; left:0; top:calc(100% + 10px); font-size:12px; color:var(--muted); }
+
+  /* scene drawing classes */
+  .sc-line { fill:none; stroke:var(--line); stroke-width:1.6; stroke-linejoin:round; stroke-linecap:round; }
+  .sc-line .sc-panel, .sc-panel { fill:var(--bg-3); }
+  .sc-line .sc-win, .sc-win { fill:var(--bg-2); }
+  .sc-dim { fill:none; stroke:var(--dim); stroke-width:1; }
+  .sc-ground { fill:var(--line); opacity:.14; }
+  .sc-dark { fill:var(--deep); }
+  .sc-w { fill:none; stroke:var(--ink); stroke-width:1.4; opacity:.8; }
+  .sc-a { fill:none; stroke:var(--a); stroke-width:3.4; stroke-linecap:round; stroke-linejoin:round; }
+  .sc-b { fill:none; stroke:var(--b); stroke-width:3.4; stroke-linecap:round; stroke-linejoin:round; }
+  .sc-drain { fill:none; stroke:var(--ink); stroke-width:4; stroke-linecap:round; opacity:.7; }
+  .sc-valve { fill:var(--deep); stroke:var(--a); stroke-width:2; }
+  .sc-glow circle { fill:var(--a); opacity:.18; animation:pulse 1.6s ease-in-out infinite; }
+  .sc-shine { fill:none; stroke:#fff; stroke-width:2; stroke-linecap:round; opacity:.55; }
+  .dirt { fill:#8c7a55; opacity:.8; } .haze { fill:#6b5a35; opacity:.22; }
+  .sparkle path { fill:var(--a); transform-box:fill-box; transform-origin:center; animation:twinkle 1.8s ease-in-out infinite; }
+  .stripe-a { fill:var(--a); opacity:.2; } .stripe-b { fill:var(--a); opacity:.08; }
+  .bed { fill:color-mix(in srgb, var(--b) 30%, var(--deep)); } .shrub { fill:color-mix(in srgb, var(--a) 35%, var(--deep)); stroke:var(--a); }
+  .flower { fill:var(--b); stroke:none; } .stone { fill:var(--bg-3); }
+  .t text { font:10px "IBM Plex Mono", monospace; letter-spacing:1.4px; fill:var(--muted); }
+  .t .a { fill:var(--a); } .t .b { fill:var(--b); } .t .w { fill:var(--ink); }
+  .flow { stroke-dasharray:10 14; animation:flow 1.4s linear infinite; }
+  .flow.slow { animation-duration:2.6s; }
+  @keyframes flow { to { stroke-dashoffset:-24; } }
+  @keyframes pulse { 50% { opacity:.4; } }
+  @keyframes twinkle { 0%, 100% { opacity:.25; transform:scale(.6); } 50% { opacity:1; transform:scale(1.15); } }
+
+  section { position:relative; max-width:1280px; margin:0 auto; padding:110px 32px 110px 96px; scroll-margin-top:20px; }
+  .title { display:flex; align-items:flex-end; gap:18px; margin-bottom:50px; flex-wrap:wrap; }
+  h2 { font-weight:800; font-size:clamp(40px, 5.2vw, 76px); line-height:.92; }
+  .dim { flex:1; min-width:120px; height:14px; position:relative; margin-bottom:12px; }
+  .dim::before { content:""; position:absolute; left:0; right:0; top:50%; border-top:1px solid var(--dim); }
+  .dim::after { content:attr(data-l); position:absolute; right:0; top:-14px; font-size:10px; color:var(--muted); letter-spacing:.14em; }
+
+  .fixtures { display:grid; grid-template-columns:repeat(4,1fr); border:1.5px solid var(--dim); }
+  .fx { position:relative; padding:26px 24px 30px; border-right:1.5px solid var(--dim); transition:background .3s; }
+  .fx:last-child { border-right:0; }
+  .fx:hover { background:color-mix(in srgb, var(--a) 6%, transparent); }
+  .fx .tagno { font-size:11px; color:var(--a); letter-spacing:.14em; }
+  .fx .ico { width:84px; height:84px; margin:22px 0 18px; border:1px dashed var(--dim); display:grid; place-items:center; color:var(--line); }
+  .fx .ico svg { width:46px; height:46px; }
+  .faq summary { font:600 28px/1.1 "Barlow Condensed", sans-serif; text-transform:uppercase; }
+  .faq details p { color:var(--muted); }
+  .fx:hover .ico { color:var(--a); border-color:var(--a); }
+  .fx h3 { font-weight:600; font-size:30px; line-height:1; margin-bottom:8px; }
+  .fx p { margin:0; color:var(--muted); font-size:15px; }
+
+  .process { list-style:none; margin:0; padding:0; counter-reset:s; display:grid; grid-template-columns:1fr 80px 1fr 80px 1fr; align-items:center; }
+  .node { border:1.5px solid var(--line); padding:26px 24px; background:color-mix(in srgb, var(--deep) 50%, transparent); }
+  .node { counter-increment:s; }
+  .node::before { content:counter(s); display:block; font:800 46px/1 "Barlow Condensed"; color:var(--a); }
+  .node h3 { font-weight:600; font-size:28px; margin:12px 0 8px; }
+  .node p { margin:0; color:var(--muted); font-size:15px; }
+  .conn { height:10px; border:1.5px solid var(--line); border-left:0; border-right:0; position:relative; overflow:hidden; }
+  .conn::before { content:""; position:absolute; inset:2px 0; background:repeating-linear-gradient(90deg, var(--a) 0 10px, transparent 10px 20px); animation:slide 1s linear infinite; }
+  @keyframes slide { from { transform:translateX(-20px); } to { transform:none; } }
+
+  .block { display:grid; grid-template-columns:1.6fr 1fr; border:1.5px solid var(--line); }
+  .block .quote { padding:40px; border-right:1.5px solid var(--line); }
+  .block blockquote { margin:0; font:500 clamp(24px, 2.6vw, 36px)/1.2 "Barlow Condensed"; }
+  .block cite { display:block; margin-top:18px; font-style:normal; color:var(--a); font-size:13px; }
+  .cells { display:grid; grid-template-rows:repeat(4, 1fr); }
+  .cell { padding:16px 22px; border-bottom:1.5px solid var(--dim); }
+  .cell:last-child { border-bottom:0; }
+  .cell small { display:block; font-size:12px; color:var(--muted); }
+  .cell strong { font:600 26px/1.15 "Barlow Condensed"; }
+  .order { display:grid; grid-template-columns:1fr 1.2fr; border:1.5px solid var(--line); }
+  .order .side { padding:40px; border-right:1.5px solid var(--line); display:flex; flex-direction:column; gap:22px; align-items:flex-start; }
+  .order .side p { margin:0; color:color-mix(in srgb, var(--ink) 82%, var(--bg)); max-width:24em; }
+  .qf { display:grid; grid-template-columns:1fr 1fr; }
+  .qf-f { display:flex; flex-direction:column; gap:4px; padding:16px 22px; border-bottom:1.5px solid var(--dim); min-width:0; }
+  .qf-f:nth-child(1) { border-right:1.5px solid var(--dim); }
+  .qf-wide, .qf-go, .qf-ok { grid-column:1 / -1; }
+  .qf label { font:13px "IBM Plex Mono", monospace; color:var(--muted); }
+  .qf input, .qf select, .qf textarea { font:500 19px "IBM Plex Sans", sans-serif; padding:6px 0; border:0; border-bottom:1.5px dashed var(--dim); background:transparent; color:var(--ink); width:100%; border-radius:0; }
+  .qf select option { background:var(--bg); }
+  .qf textarea { resize:vertical; }
+  .qf :is(input, select, textarea):focus-visible { outline:none; border-bottom:1.5px solid var(--a); }
+  .qf [aria-invalid="true"] { border-bottom-color:#ff6b6b; }
+  .qf-e { margin:0; color:#ff8f8f; font-size:14px; }
+  .qf-go { margin:22px; justify-self:start; }
+  .qf-ok { margin:0; padding:26px 22px; font-size:18px; }
+  .qf-ok:empty { display:none; }
+  footer { max-width:1280px; margin:0 auto; padding:30px 32px 56px 96px; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:12px; border-top:1.5px solid var(--dim); }
+
+
+  @media (max-width:1000px) {
+    header, .hero, section, footer { padding-left:24px; padding-right:24px; }
+    .hero { grid-template-columns:1fr; min-height:0; padding-bottom:110px; }
+    .fixtures { grid-template-columns:1fr 1fr; }
+    .fx:nth-child(2) { border-right:0; } .fx:nth-child(-n+2) { border-bottom:1.5px solid var(--dim); }
+    .process { grid-template-columns:1fr; } .conn { width:10px; height:44px; margin:0 auto; border:1.5px solid var(--line); border-top:0; border-bottom:0; }
+    .conn::before { inset:0 2px; background:repeating-linear-gradient(180deg, var(--a) 0 10px, transparent 10px 20px); animation:none; }
+    .block, .order { grid-template-columns:1fr; } .block .quote, .order .side { border-right:0; border-bottom:1.5px solid var(--line); }
+    .cells { grid-template-columns:1fr 1fr; grid-template-rows:auto; } .cell:nth-child(odd) { border-right:1.5px solid var(--dim); }
+    .rail { left:16px; right:16px; top:auto; bottom:12px; width:auto; height:22px; }
+    .rail .pipe { left:0; right:0; top:6px; bottom:auto; width:auto; height:10px; }
+    .rail .water { height:auto; bottom:0; width:calc(var(--p,0) * 100%); box-shadow:none; }
+    .valve { top:50% !important; left:var(--pos); transform:translate(-50%,-50%); width:22px; height:22px; }
+    .valve span { display:none; }
+    footer { padding-bottom:70px; }
+  }
+  @media (max-width:560px) {
+    header { padding-top:44px; gap:12px; } .sheet { display:none; } .logo { font-size:19px; } .call { padding:10px 12px; font-size:13px; }
+    .hero { padding-top:28px; } section { padding-top:80px; padding-bottom:80px; }
+    .fixtures { grid-template-columns:1fr; } .fx { border-right:0 !important; border-bottom:1.5px solid var(--dim); } .fx:last-child { border-bottom:0; }
+    .xray { --r:80px; } .meta { gap:20px; } .block .quote, .order .side { padding:26px; }
+    .qf { grid-template-columns:1fr; } .qf-f:nth-child(1) { border-right:0; }
+    .concept { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; } footer { flex-direction:column; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation:none !important; transition:none !important; }
+
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#top">Skip to content</a>
+<div class="concept">Concept homepage (Made for you) for Pebble Junction by Mana Core Labs. Not a live website.</div>
+
+<nav class="rail" aria-label="Page sections"><div class="pipe"><div class="water"></div></div></nav>
+
+<header>
+  <a class="logo" href="#top">Pebble Junction</a>
+  <span class="sheet" aria-hidden="true">Sheet L-01</span>
+  <a class="call" href="tel:4073233838"><span aria-hidden="true">☏</span> (407) 323-3838</a>
+</header>
+
+<main id="top">
+<div class="hero" data-label="Start">
+  <div>
+    <p class="code">Lawn &amp; Landscaping plan for Sanford, FL</p>
+    <h1>Your yard, by design.</h1>
+    <p class="lede">Lawn care, landscaping and cleanups. Request a quote online and we&#39;ll set up a schedule.</p>
+    <div class="row"><a class="btn" href="#call">Get a free quote</a><a class="btn line" href="#services">See services</a></div>
+    <div class="meta"><div><b class="num">4.1★</b>Google rating</div><div><b class="num">158</b>reviews</div></div>
+  </div>
+  <figure class="xray" id="xray" tabindex="0" aria-label="Interactive cutaway drawing. Use the arrow keys to move the lens." aria-describedby="xray-cap">
+    <svg viewBox="0 0 600 480" aria-hidden="true"><g class="sc-line">
+  <path d="M380 150 l90 -60 l90 60" /><rect x="395" y="150" width="150" height="100" class="sc-panel" />
+  <rect x="455" y="200" width="30" height="50" class="sc-win" /><rect x="410" y="170" width="30" height="24" class="sc-win" /><rect x="500" y="170" width="30" height="24" class="sc-win" />
+  <path d="M0 250 H600" stroke-width="2" />
+  <path d="M10 250 v-34 l6 -8 l6 8 v34" /><path d="M34 250 v-34 l6 -8 l6 8 v34" /><path d="M58 250 v-34 l6 -8 l6 8 v34" /><path d="M82 250 v-34 l6 -8 l6 8 v34" /><path d="M106 250 v-34 l6 -8 l6 8 v34" /><path d="M130 250 v-34 l6 -8 l6 8 v34" /><path d="M154 250 v-34 l6 -8 l6 8 v34" /><path d="M178 250 v-34 l6 -8 l6 8 v34" /><path d="M202 250 v-34 l6 -8 l6 8 v34" /><path d="M226 250 v-34 l6 -8 l6 8 v34" /><path d="M250 250 v-34 l6 -8 l6 8 v34" /><path d="M274 250 v-34 l6 -8 l6 8 v34" /><path d="M298 250 v-34 l6 -8 l6 8 v34" /><path d="M322 250 v-34 l6 -8 l6 8 v34" /><path d="M346 250 v-34 l6 -8 l6 8 v34" /><path d="M370 250 v-34 l6 -8 l6 8 v34" />
+</g>
+<g class="sc-dim">
+  <path d="M0 272 L6 256 L12 272 L18 253 L24 272 L30 250 L36 272 L42 256 L48 272 L54 253 L60 272 L66 250 L72 272 L78 256 L84 272 L90 253 L96 272 L102 250 L108 272 L114 256 L120 272 L126 253 L132 272 L138 250 L144 272 L150 256 L156 272 L162 253 L168 272 L174 250 L180 272 L186 256 L192 272 L198 253 L204 272 L210 250 L216 272 L222 256 L228 272 L234 253 L240 272 L246 250 L252 272 L258 256 L264 272 L270 253 L276 272 L282 250 L288 272 L294 256 L300 272 L306 253 L312 272 L318 250 L324 272 L330 256 L336 272 L342 253 L348 272 L354 250 L360 272 L366 256 L372 272 L378 253 L384 272 L390 250 L396 272 L402 256 L408 272 L414 253 L420 272 L426 250 L432 272 L438 256 L444 272 L450 253 L456 272 L462 250 L468 272 L474 256 L480 272 L486 253 L492 272 L498 250 L504 272 L510 256 L516 272 L522 253 L528 272 L534 250 L540 272 L546 256 L552 272 L558 253 L564 272 L570 250 L576 272 L582 256 L588 272 L594 253 L600 272" /><path d="M0 294 L6 274 L12 294 L18 271 L24 294 L30 277 L36 294 L42 274 L48 294 L54 271 L60 294 L66 277 L72 294 L78 274 L84 294 L90 271 L96 294 L102 277 L108 294 L114 274 L120 294 L126 271 L132 294 L138 277 L144 294 L150 274 L156 294 L162 271 L168 294 L174 277 L180 294 L186 274 L192 294 L198 271 L204 294 L210 277 L216 294 L222 274 L228 294 L234 271 L240 294 L246 277 L252 294 L258 274 L264 294 L270 271 L276 294 L282 277 L288 294 L294 274 L300 294 L306 271 L312 294 L318 277 L324 294 L330 274 L336 294 L342 271 L348 294 L354 277 L360 294 L366 274 L372 294 L378 271 L384 294 L390 277 L396 294 L402 274 L408 294 L414 271 L420 294 L426 277 L432 294 L438 274 L444 294 L450 271 L456 294 L462 277 L468 294 L474 274 L480 294 L486 271 L492 294 L498 277 L504 294 L510 274 L516 294 L522 271 L528 294 L534 277 L540 294 L546 274 L552 294 L558 271 L564 294 L570 277 L576 294 L582 274 L588 294 L594 271 L600 294" /><path d="M0 316 L6 292 L12 316 L18 298 L24 316 L30 295 L36 316 L42 292 L48 316 L54 298 L60 316 L66 295 L72 316 L78 292 L84 316 L90 298 L96 316 L102 295 L108 316 L114 292 L120 316 L126 298 L132 316 L138 295 L144 316 L150 292 L156 316 L162 298 L168 316 L174 295 L180 316 L186 292 L192 316 L198 298 L204 316 L210 295 L216 316 L222 292 L228 316 L234 298 L240 316 L246 295 L252 316 L258 292 L264 316 L270 298 L276 316 L282 295 L288 316 L294 292 L300 316 L306 298 L312 316 L318 295 L324 316 L330 292 L336 316 L342 298 L348 316 L354 295 L360 316 L366 292 L372 316 L378 298 L384 316 L390 295 L396 316 L402 292 L408 316 L414 298 L420 316 L426 295 L432 316 L438 292 L444 316 L450 298 L456 316 L462 295 L468 316 L474 292 L480 316 L486 298 L492 316 L498 295 L504 316 L510 292 L516 316 L522 298 L528 316 L534 295 L540 316 L546 292 L552 316 L558 298 L564 316 L570 295 L576 316 L582 292 L588 316 L594 298 L600 316" /><path d="M0 338 L6 319 L12 338 L18 316 L24 338 L30 322 L36 338 L42 319 L48 338 L54 316 L60 338 L66 322 L72 338 L78 319 L84 338 L90 316 L96 338 L102 322 L108 338 L114 319 L120 338 L126 316 L132 338 L138 322 L144 338 L150 319 L156 338 L162 316 L168 338 L174 322 L180 338 L186 319 L192 338 L198 316 L204 338 L210 322 L216 338 L222 319 L228 338 L234 316 L240 338 L246 322 L252 338 L258 319 L264 338 L270 316 L276 338 L282 322 L288 338 L294 319 L300 338 L306 316 L312 338 L318 322 L324 338 L330 319 L336 338 L342 316 L348 338 L354 322 L360 338 L366 319 L372 338 L378 316 L384 338 L390 322 L396 338 L402 319 L408 338 L414 316 L420 338 L426 322 L432 338 L438 319 L444 338 L450 316 L456 338 L462 322 L468 338 L474 319 L480 338 L486 316 L492 338 L498 322 L504 338 L510 319 L516 338 L522 316 L528 338 L534 322 L540 338 L546 319 L552 338 L558 316 L564 338 L570 322 L576 338 L582 319 L588 338 L594 316 L600 338" /><path d="M0 360 L6 337 L12 360 L18 343 L24 360 L30 340 L36 360 L42 337 L48 360 L54 343 L60 360 L66 340 L72 360 L78 337 L84 360 L90 343 L96 360 L102 340 L108 360 L114 337 L120 360 L126 343 L132 360 L138 340 L144 360 L150 337 L156 360 L162 343 L168 360 L174 340 L180 360 L186 337 L192 360 L198 343 L204 360 L210 340 L216 360 L222 337 L228 360 L234 343 L240 360 L246 340 L252 360 L258 337 L264 360 L270 343 L276 360 L282 340 L288 360 L294 337 L300 360 L306 343 L312 360 L318 340 L324 360 L330 337 L336 360 L342 343 L348 360 L354 340 L360 360 L366 337 L372 360 L378 343 L384 360 L390 340 L396 360 L402 337 L408 360 L414 343 L420 360 L426 340 L432 360 L438 337 L444 360 L450 343 L456 360 L462 340 L468 360 L474 337 L480 360 L486 343 L492 360 L498 340 L504 360 L510 337 L516 360 L522 343 L528 360 L534 340 L540 360 L546 337 L552 360 L558 343 L564 360 L570 340 L576 360 L582 337 L588 360 L594 343 L600 360" /><path d="M0 382 L6 364 L12 382 L18 361 L24 382 L30 358 L36 382 L42 364 L48 382 L54 361 L60 382 L66 358 L72 382 L78 364 L84 382 L90 361 L96 382 L102 358 L108 382 L114 364 L120 382 L126 361 L132 382 L138 358 L144 382 L150 364 L156 382 L162 361 L168 382 L174 358 L180 382 L186 364 L192 382 L198 361 L204 382 L210 358 L216 382 L222 364 L228 382 L234 361 L240 382 L246 358 L252 382 L258 364 L264 382 L270 361 L276 382 L282 358 L288 382 L294 364 L300 382 L306 361 L312 382 L318 358 L324 382 L330 364 L336 382 L342 361 L348 382 L354 358 L360 382 L366 364 L372 382 L378 361 L384 382 L390 358 L396 382 L402 364 L408 382 L414 361 L420 382 L426 358 L432 382 L438 364 L444 382 L450 361 L456 382 L462 358 L468 382 L474 364 L480 382 L486 361 L492 382 L498 358 L504 382 L510 364 L516 382 L522 361 L528 382 L534 358 L540 382 L546 364 L552 382 L558 361 L564 382 L570 358 L576 382 L582 364 L588 382 L594 361 L600 382" /><path d="M0 404 L6 382 L12 404 L18 388 L24 404 L30 385 L36 404 L42 382 L48 404 L54 388 L60 404 L66 385 L72 404 L78 382 L84 404 L90 388 L96 404 L102 385 L108 404 L114 382 L120 404 L126 388 L132 404 L138 385 L144 404 L150 382 L156 404 L162 388 L168 404 L174 385 L180 404 L186 382 L192 404 L198 388 L204 404 L210 385 L216 404 L222 382 L228 404 L234 388 L240 404 L246 385 L252 404 L258 382 L264 404 L270 388 L276 404 L282 385 L288 404 L294 382 L300 404 L306 388 L312 404 L318 385 L324 404 L330 382 L336 404 L342 388 L348 404 L354 385 L360 404 L366 382 L372 404 L378 388 L384 404 L390 385 L396 404 L402 382 L408 404 L414 388 L420 404 L426 385 L432 404 L438 382 L444 404 L450 388 L456 404 L462 385 L468 404 L474 382 L480 404 L486 388 L492 404 L498 385 L504 404 L510 382 L516 404 L522 388 L528 404 L534 385 L540 404 L546 382 L552 404 L558 388 L564 404 L570 385 L576 404 L582 382 L588 404 L594 388 L600 404" /><path d="M0 426 L6 409 L12 426 L18 406 L24 426 L30 403 L36 426 L42 409 L48 426 L54 406 L60 426 L66 403 L72 426 L78 409 L84 426 L90 406 L96 426 L102 403 L108 426 L114 409 L120 426 L126 406 L132 426 L138 403 L144 426 L150 409 L156 426 L162 406 L168 426 L174 403 L180 426 L186 409 L192 426 L198 406 L204 426 L210 403 L216 426 L222 409 L228 426 L234 406 L240 426 L246 403 L252 426 L258 409 L264 426 L270 406 L276 426 L282 403 L288 426 L294 409 L300 426 L306 406 L312 426 L318 403 L324 426 L330 409 L336 426 L342 406 L348 426 L354 403 L360 426 L366 409 L372 426 L378 406 L384 426 L390 403 L396 426 L402 409 L408 426 L414 406 L420 426 L426 403 L432 426 L438 409 L444 426 L450 406 L456 426 L462 403 L468 426 L474 409 L480 426 L486 406 L492 426 L498 403 L504 426 L510 409 L516 426 L522 406 L528 426 L534 403 L540 426 L546 409 L552 426 L558 406 L564 426 L570 403 L576 426 L582 409 L588 426 L594 406 L600 426" /><path d="M0 448 L6 427 L12 448 L18 424 L24 448 L30 430 L36 448 L42 427 L48 448 L54 424 L60 448 L66 430 L72 448 L78 427 L84 448 L90 424 L96 448 L102 430 L108 448 L114 427 L120 448 L126 424 L132 448 L138 430 L144 448 L150 427 L156 448 L162 424 L168 448 L174 430 L180 448 L186 427 L192 448 L198 424 L204 448 L210 430 L216 448 L222 427 L228 448 L234 424 L240 448 L246 430 L252 448 L258 427 L264 448 L270 424 L276 448 L282 430 L288 448 L294 427 L300 448 L306 424 L312 448 L318 430 L324 448 L330 427 L336 448 L342 424 L348 448 L354 430 L360 448 L366 427 L372 448 L378 424 L384 448 L390 430 L396 448 L402 427 L408 448 L414 424 L420 448 L426 430 L432 448 L438 427 L444 448 L450 424 L456 448 L462 430 L468 448 L474 427 L480 448 L486 424 L492 448 L498 430 L504 448 L510 427 L516 448 L522 424 L528 448 L534 430 L540 448 L546 427 L552 448 L558 424 L564 448 L570 430 L576 448 L582 427 L588 448 L594 424 L600 448" /><path d="M0 470 L6 454 L12 470 L18 451 L24 470 L30 448 L36 470 L42 454 L48 470 L54 451 L60 470 L66 448 L72 470 L78 454 L84 470 L90 451 L96 470 L102 448 L108 470 L114 454 L120 470 L126 451 L132 470 L138 448 L144 470 L150 454 L156 470 L162 451 L168 470 L174 448 L180 470 L186 454 L192 470 L198 451 L204 470 L210 448 L216 470 L222 454 L228 470 L234 451 L240 470 L246 448 L252 470 L258 454 L264 470 L270 451 L276 470 L282 448 L288 470 L294 454 L300 470 L306 451 L312 470 L318 448 L324 470 L330 454 L336 470 L342 451 L348 470 L354 448 L360 470 L366 454 L372 470 L378 451 L384 470 L390 448 L396 470 L402 454 L408 470 L414 451 L420 470 L426 448 L432 470 L438 454 L444 470 L450 451 L456 470 L462 448 L468 470 L474 454 L480 470 L486 451 L492 470 L498 448 L504 470 L510 454 L516 470 L522 451 L528 470 L534 448 L540 470 L546 454 L552 470 L558 451 L564 470 L570 448 L576 470 L582 454 L588 470 L594 451 L600 470" />
+</g>
+<g class="sc-line">
+  <path d="M60 300 c-30 -10 -30 -60 0 -70 c10 -30 60 -30 70 0 c34 0 40 54 4 70 c-10 18 -60 18 -74 0z" class="sc-panel" />
+  <path d="M190 330 c-24 -6 -26 -46 2 -52 c12 -22 52 -18 56 6 c26 8 20 48 -8 48 c-12 14 -40 12 -50 -2z" class="sc-panel" />
+  <path d="M520 470 v-110 M520 360 c-70 0 -80 -80 -30 -100 c0 -40 70 -40 70 0 c50 20 40 100 -40 100" class="sc-panel" />
+</g>
+</svg>
+    <svg class="inside" viewBox="0 0 600 480" aria-hidden="true"><rect width="600" height="480" class="sc-dark" />
+<g class="sc-line">
+  <path d="M380 150 l90 -60 l90 60" /><rect x="395" y="150" width="150" height="100" class="sc-panel" />
+  <rect x="455" y="200" width="30" height="50" class="sc-win" /><rect x="410" y="170" width="30" height="24" class="sc-win" /><rect x="500" y="170" width="30" height="24" class="sc-win" />
+  <path d="M0 250 H600" stroke-width="2" />
+  <path d="M10 250 v-34 l6 -8 l6 8 v34" /><path d="M34 250 v-34 l6 -8 l6 8 v34" /><path d="M58 250 v-34 l6 -8 l6 8 v34" /><path d="M82 250 v-34 l6 -8 l6 8 v34" /><path d="M106 250 v-34 l6 -8 l6 8 v34" /><path d="M130 250 v-34 l6 -8 l6 8 v34" /><path d="M154 250 v-34 l6 -8 l6 8 v34" /><path d="M178 250 v-34 l6 -8 l6 8 v34" /><path d="M202 250 v-34 l6 -8 l6 8 v34" /><path d="M226 250 v-34 l6 -8 l6 8 v34" /><path d="M250 250 v-34 l6 -8 l6 8 v34" /><path d="M274 250 v-34 l6 -8 l6 8 v34" /><path d="M298 250 v-34 l6 -8 l6 8 v34" /><path d="M322 250 v-34 l6 -8 l6 8 v34" /><path d="M346 250 v-34 l6 -8 l6 8 v34" /><path d="M370 250 v-34 l6 -8 l6 8 v34" />
+</g>
+<rect x="0" y="252" width="600" height="25" class="stripe-b" /><rect x="0" y="277" width="600" height="25" class="stripe-a" /><rect x="0" y="302" width="600" height="25" class="stripe-b" /><rect x="0" y="327" width="600" height="25" class="stripe-a" /><rect x="0" y="352" width="600" height="25" class="stripe-b" /><rect x="0" y="377" width="600" height="25" class="stripe-a" /><rect x="0" y="402" width="600" height="25" class="stripe-b" /><rect x="0" y="427" width="600" height="25" class="stripe-a" /><rect x="0" y="452" width="600" height="25" class="stripe-b" />
+<g class="sc-line">
+  <path d="M20 300 c40 -30 120 -30 170 0 c30 20 20 50 -30 50 h-110 c-40 0 -50 -30 -30 -50z" class="bed" />
+  <circle cx="60" cy="300" r="16" class="shrub" /><circle cx="105" cy="292" r="20" class="shrub" /><circle cx="150" cy="305" r="15" class="shrub" />
+  <circle cx="80" cy="330" r="4" class="flower" /><circle cx="120" cy="334" r="4" class="flower" /><circle cx="165" cy="328" r="4" class="flower" /><circle cx="45" cy="326" r="4" class="flower" />
+  <ellipse cx="470.0" cy="268" rx="20" ry="7" class="stone" /><ellipse cx="459.5" cy="298" rx="20" ry="7" class="stone" /><ellipse cx="449.0" cy="328" rx="20" ry="7" class="stone" /><ellipse cx="438.5" cy="358" rx="20" ry="7" class="stone" /><ellipse cx="428.0" cy="388" rx="20" ry="7" class="stone" /><ellipse cx="417.5" cy="418" rx="20" ry="7" class="stone" /><ellipse cx="407.0" cy="448" rx="20" ry="7" class="stone" />
+  <path d="M520 470 v-110" stroke-width="3" /><circle cx="520" cy="320" r="48" class="shrub" />
+</g>
+<g class="t"><text x="12" y="474">AFTER — MOWED, EDGED, PLANTED</text></g>
+</svg>
+    <div class="lens" aria-hidden="true"><i>AFTER</i></div>
+    <figcaption id="xray-cap">Fig. 1. Move over the yard to see it done.</figcaption>
+  </figure>
+</div>
+
+<section id="services" data-label="Services">
+  <div class="title"><h2>Lawn care and landscaping</h2><div class="dim" aria-hidden="true" data-l="Details L-A1 to A4"></div></div>
+  <ul class="fixtures" style="list-style:none;margin:0;padding:0">
+    <li class="fx"><div class="tagno" aria-hidden="true">L-A1</div><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-14 15-15-1 10-7 15-15 15z"/><path d="M5 19l8-8"/></svg></div>
+      <h3>Lawn care</h3><p>Mowing, edging and trimming on a regular schedule.</p></li><li class="fx"><div class="tagno" aria-hidden="true">L-A2</div><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-14 15-15-1 10-7 15-15 15z"/><path d="M5 19l8-8"/></svg></div>
+      <h3>Landscaping</h3><p>Beds, plants and mulch that hold up to Florida summers.</p></li><li class="fx"><div class="tagno" aria-hidden="true">L-A3</div><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-14 15-15-1 10-7 15-15 15z"/><path d="M5 19l8-8"/></svg></div>
+      <h3>Cleanups</h3><p>Seasonal and storm cleanups, hauled away.</p></li><li class="fx"><div class="tagno" aria-hidden="true">L-A4</div><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-14 15-15-1 10-7 15-15 15z"/><path d="M5 19l8-8"/></svg></div>
+      <h3>Irrigation</h3><p>Sprinkler checks and repairs to keep it green.</p></li>
+  </ul>
+</section>
+
+<section id="process" data-label="Process">
+  <div class="title"><h2>How it works</h2><div class="dim" aria-hidden="true" data-l="Schematic L-S1"></div></div>
+  <ol class="process">
+    <li class="node"><h3>Tell us what you need</h3><p>Call, or send a quick request. Photos help us quote faster.</p></li>
+    <li class="conn" aria-hidden="true"></li>
+    <li class="node"><h3>Pick a time</h3><p>Choose a slot that works for you and get a text confirmation.</p></li>
+    <li class="conn" aria-hidden="true"></li>
+    <li class="node"><h3>Enjoy the yard</h3><p>We show up on schedule and text you when the work is done.</p></li>
+  </ol>
+</section>
+
+<section id="reviews" data-label="Reviews">
+  <div class="title"><h2>Inspection report</h2><div class="dim" aria-hidden="true" data-l="From Google reviews"></div></div>
+  <div class="block">
+    <div class="quote"><figure style="margin:0"><blockquote>“The staff is absolutely outstanding!”</blockquote><cite>Google review, 5 stars</cite></figure>
+      </div>
+    <dl class="cells" style="margin:0">
+      <div class="cell"><dt><small>Project</small></dt><dd style="margin:0"><strong>Pebble Junction</strong></dd></div>
+      <div class="cell"><dt><small>Rating</small></dt><dd style="margin:0"><strong class="num">4.1 / 5</strong></dd></div>
+      <div class="cell"><dt><small>Reviews</small></dt><dd style="margin:0"><strong class="num">158</strong></dd></div>
+      <div class="cell"><dt><small>Area</small></dt><dd style="margin:0"><strong>Sanford, FL</strong></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="faq" data-label="FAQ">
+  <div class="title"><h2>Common questions</h2><div class="dim" aria-hidden="true" data-l="Notes L-N1"></div></div>
+  
+<div class="faq">
+  <details><summary>Do you work in my area?</summary><p>Pebble Junction works in Sanford, FL and nearby towns. Not sure about your street? Call (407) 323-3838 or send a request and we’ll tell you right away.</p></details>
+  <details><summary>How soon can someone come out?</summary><p>It depends on the day’s schedule. Call (407) 323-3838 for the next open time, or send a request and we’ll call you back.</p></details>
+  <details><summary>Can I get an idea of the price first?</summary><p>Ask when you call or in your request. Photos of the problem help us give you a better estimate.</p></details>
+  <details><summary>What should I have ready?</summary><p>Your address, a short description of what’s going on and, if you can, a photo or two.</p></details>
+</div>
+
+</section>
+
+<section id="call" data-label="Call">
+  <div class="title"><h2>Want a better-looking yard?</h2><div class="dim" aria-hidden="true" data-l="Work order L-W1"></div></div>
+  <div class="order">
+    <div class="side">
+      <p>Fill in the work order and we’ll call you back, or call now and talk to someone today.</p>
+      <a class="btn" href="tel:4073233838"><span aria-hidden="true">☏</span> (407) 323-3838</a>
+    </div>
+    
+<form class="qf" novalidate aria-label="Request a quote">
+  <div class="qf-f">
+    <label for="qf-name">Your name</label>
+    <input id="qf-name" name="name" autocomplete="name" required aria-describedby="qf-name-e">
+    <p class="qf-e" id="qf-name-e" hidden>Add your name so we know who to ask for.</p>
+  </div>
+  <div class="qf-f">
+    <label for="qf-phone">Phone</label>
+    <input id="qf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="qf-phone-e">
+    <p class="qf-e" id="qf-phone-e" hidden>Enter a 10-digit phone number.</p>
+  </div>
+  <div class="qf-f qf-wide">
+    <label for="qf-need">What do you need?</label>
+    <select id="qf-need" name="need">
+      <option>Lawn care</option><option>Landscaping</option><option>Cleanups</option><option>Irrigation</option>
+      <option>Something else</option>
+    </select>
+  </div>
+  <div class="qf-f qf-wide">
+    <label for="qf-details">Anything we should know? <span class="qf-opt">(optional)</span></label>
+    <textarea id="qf-details" name="details" rows="3"></textarea>
+  </div>
+  <button class="btn qf-go" type="submit">Get a free quote</button>
+  <p class="qf-ok" role="status" aria-live="polite" data-biz="Pebble Junction"></p>
+</form>
+
+  </div>
+</section>
+</main>
+
+<footer><span>© 2026 Pebble Junction</span><span>Concept design by Mana Core Labs</span></footer>
+
+
+<div class="mbar" aria-label="Quick contact"><a href="tel:4073233838">Call</a><a class="go" href="#book">Get a free quote</a></div>
+<script>
+// Show the phone bar once the hero's buttons have scrolled away.
+(() => { const bar = document.querySelector('.mbar'); if (!bar) return;
+  const on = () => bar.classList.toggle('on', scrollY > innerHeight * .7 && !document.querySelector('#book')?.matches(':focus-within'));
+  addEventListener('scroll', on, { passive:true }); on(); })();
+</script>
+
+
+<script>
+document.querySelectorAll('.qf').forEach(f => f.addEventListener('submit', e => {
+  e.preventDefault();
+  const name = f.elements.name, phone = f.elements.phone, bad = [];
+  const check = (el, ok) => { el.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    document.getElementById(el.getAttribute('aria-describedby')).hidden = ok; if (!ok) bad.push(el); };
+  check(name, name.value.trim().length > 0);
+  check(phone, phone.value.replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '').length === 10);
+  if (bad.length) { bad[0].focus(); return; }
+  const ok = f.querySelector('.qf-ok');
+  f.querySelectorAll('.qf-f, .qf-go').forEach(el => el.hidden = true);
+  ok.textContent = `Thanks, ${name.value.trim().split(' ')[0]}. This is a concept page, so nothing was sent. On the live site, this request goes straight to ${ok.dataset.biz}.`;
+  ok.tabIndex = -1; ok.focus();
+}));
+</script>
+
+<script>
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const xr = document.getElementById('xray');
+let target = null; const cur = { x:.62, y:.58 };
+const at = e => { const b = xr.getBoundingClientRect(); target = { x:(e.clientX - b.left) / b.width, y:(e.clientY - b.top) / b.height }; };
+xr.addEventListener('pointermove', at); xr.addEventListener('pointerdown', at);
+xr.addEventListener('pointerleave', () => { target = null; });
+// Arrow keys move the lens, so keyboard users get the same reveal.
+xr.addEventListener('keydown', e => {
+  const d = { ArrowLeft:[-.06, 0], ArrowRight:[.06, 0], ArrowUp:[0, -.06], ArrowDown:[0, .06] }[e.key];
+  if (!d) return; e.preventDefault();
+  const from = target || cur;
+  target = { x:Math.min(.95, Math.max(.05, from.x + d[0])), y:Math.min(.95, Math.max(.05, from.y + d[1])) };
+  if (reduce) { xr.style.setProperty('--x', target.x * 100 + '%'); xr.style.setProperty('--y', target.y * 100 + '%'); }
+});
+xr.addEventListener('blur', () => { target = null; });
+function tick(ms) {
+  const t = ms / 1000, goal = target || { x:.55 + Math.sin(t * .45) * .3, y:.58 + Math.sin(t * .7) * .2 };
+  cur.x += (goal.x - cur.x) * .12; cur.y += (goal.y - cur.y) * .12;
+  xr.style.setProperty('--x', cur.x * 100 + '%'); xr.style.setProperty('--y', cur.y * 100 + '%');
+  requestAnimationFrame(tick);
+}
+if (!reduce) requestAnimationFrame(tick); else { xr.style.setProperty('--x', '62%'); xr.style.setProperty('--y', '62%'); }
+
+const rail = document.querySelector('.rail');
+const parts = [...document.querySelectorAll('[data-label]')];
+const valves = parts.map((el, i) => {
+  const v = document.createElement('button'); v.className = 'valve'; v.type = 'button';
+  v.setAttribute('aria-label', 'Go to ' + el.dataset.label.toLowerCase());
+  v.innerHTML = '<span>' + el.dataset.label + '</span>';
+  v.style.setProperty('--pos', (i / (parts.length - 1) * 100) + '%');
+  v.addEventListener('click', () => el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block:'start' }));
+  rail.appendChild(v); return v;
+});
+function onScroll() {
+  const max = document.documentElement.scrollHeight - innerHeight, p = max > 0 ? Math.min(scrollY / max, 1) : 0;
+  rail.style.setProperty('--p', p);
+  let active = 0;
+  parts.forEach((el, i) => { if (el.getBoundingClientRect().top < innerHeight * .45) active = i; });
+  if (p > .985) active = parts.length - 1;
+  valves.forEach((v, i) => { v.classList.toggle('open', i <= active); v.classList.toggle('cur', i === active); });
+}
+addEventListener('scroll', onScroll, { passive:true }); addEventListener('resize', onScroll); onScroll();
+
+</script>
+<script type="module">
+import { animate, createDrawable, stagger } from 'https://cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.esm.min.js';
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const shapes = 'path, line, polyline, polygon, rect, circle, ellipse';
+  // On load the blueprint drafts itself: every line of the outside drawing traces in.
+  const plan = document.querySelectorAll(`#xray svg:first-of-type :is(.sc-line, .sc-dim) :is(${shapes})`);
+  if (plan.length) animate(createDrawable(plan), { draw: ['0 0', '0 1'], duration: 1400, delay: stagger(18), ease: 'inOut(3)' });
+  // Service icons start undrawn and trace in as they scroll into view, one after another.
+  const fx = [...document.querySelectorAll('.fx')];
+  const icons = fx.map(el => createDrawable(el.querySelectorAll(`.ico svg :is(${shapes})`)));
+  icons.forEach(d => animate(d, { draw: '0 0', duration: 0 }));
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; io.unobserve(e.target);
+    const i = fx.indexOf(e.target);
+    animate(icons[i], { draw: ['0 0', '0 1'], duration: 1300, delay: i * 140, ease: 'inOut(3)' });
+  }), { threshold: .3 });
+  fx.forEach(el => io.observe(el));
+}
+</script>
+</body>
+</html>
